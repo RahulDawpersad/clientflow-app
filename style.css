@@ -371,6 +371,16 @@ img {
     margin-bottom: 28px;
 }
 
+.stat-label,
+.stat-value,
+.hero-overlay h2,
+.hero-overlay p {
+    white-space: nowrap; /* Or 'normal' if you want wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds ... if too long */
+    max-width: 100%;
+}
+
 .stat-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -1657,6 +1667,7 @@ img {
         font-size: 14px;
     }
 }
+
 
 
 
