@@ -61,10 +61,10 @@ body {
     /* overflow-x: hidden; */
 }
 
-html, body {
+/* html, body {
     overflow-x: hidden;
     max-width: 100%;
-}
+} */
 
 a {
     color: var(--primary);
@@ -1667,6 +1667,7 @@ img {
         font-size: 14px;
     }
 }
+
 
 
 
