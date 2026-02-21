@@ -58,6 +58,7 @@ body {
     min-height: 100vh;
     display: flex;
     transition: background var(--transition), color var(--transition);
+    overflow-x: hidden;
 }
 
 a {
