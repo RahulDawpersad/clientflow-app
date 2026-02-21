@@ -366,7 +366,7 @@ img {
 /* ==================== STATS GRID ==================== */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust minmax value based on your stat-card min comfortable width; 220px works well here */
     gap: 20px;
     margin-bottom: 28px;
 }
@@ -1504,7 +1504,7 @@ img {
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
-    .sidebar {
+   .sidebar {
         transform: translateX(-100%);
     }
 
@@ -1522,7 +1522,15 @@ img {
 
     .main-content {
         margin-left: 0;
-        padding: 72px 16px 24px; /* Keep your mobile padding */
+        padding: 72px 16px 24px;
+    }
+
+    .hero-banner {
+        height: 180px; /* Slight adjust between desktop 200px and mobile 160px */
+    }
+
+    .hero-overlay {
+        padding: 24px 28px; /* Reduce padding to prevent text overflow on narrower mains */
     }
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1649,5 +1657,6 @@ img {
         font-size: 14px;
     }
 }
+
 
 
