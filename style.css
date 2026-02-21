@@ -1504,6 +1504,26 @@ img {
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .mobile-header {
+        display: flex;
+    }
+
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 72px 16px 24px; /* Keep your mobile padding */
+    }
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1629,4 +1649,5 @@ img {
         font-size: 14px;
     }
 }
+
 
