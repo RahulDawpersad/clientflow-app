@@ -281,7 +281,8 @@ img {
 
 /* ==================== MAIN CONTENT ==================== */
 .main-content {
-    margin-left: var(--sidebar-width);
+      margin-left: 0 !important; /* Override any lingering sidebar margin */
+    margin-right: 0 !important;
     flex: 1;
     padding: 32px;
     min-height: 100vh;
@@ -354,6 +355,7 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 32px 40px;
     text-align: center;
     color: #FFFFFF;
@@ -370,9 +372,12 @@ img {
     opacity: 0.9;
 }
 
-.hero-overlay h2, .hero-overlay p {
-    max-width: 90%; /* Centers and constrains text */
-    margin: 0 auto;
+.hero-overlay h2,
+.hero-overlay p {
+    text-align: center;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ==================== STATS GRID ==================== */
@@ -398,13 +403,14 @@ img {
     padding: 20px;
     display: flex;
     align-items: center;
+    justify-content: center; /* Centers icon + info flex */
+    text-align: center; /* Centers text inside */
     gap: 16px;
     box-shadow: var(--shadow);
-    transition: all var(--transition);
-    /* min-width: 0; /* Allows flex-shrink if needed */
+    transition: all var
     overflow: hidden;
     width: 100%;
-    max-width: 320px; /* Prevents full-stretch on mobile; centers with justify-items */
+    max-width: 90%; /* Prevents full-stretch on mobile; centers with justify-items */
 }
 
 .stat-card:hover {
@@ -1580,14 +1586,13 @@ img {
         display: block;
     }
 
-    .main-content {
-        margin-left: 0;
-        padding: 72px 16px 24px;
+   .main-content {
+        padding-left: 16px !important; /* Force symmetry if overridden */
+        padding-right: 16px !important;
     }
 
     .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
+        grid-template-columns: 1fr; /* Explicit 1 column for narrow mobiles */
     }
 
     .client-grid {
@@ -1689,6 +1694,7 @@ img {
         font-size: 14px;
     }
 }
+
 
 
 
