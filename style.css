@@ -375,7 +375,6 @@ img {
     gap: 16px;
     box-shadow: var(--shadow);
     transition: all var(--transition);
-    overflow: hidden; /* Prevent overflow */
 }
 
 .stat-card:hover {
@@ -448,7 +447,6 @@ img {
 .stat-info {
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Prevent overflow in info */
 }
 
 .stat-value {
@@ -456,9 +454,6 @@ img {
     font-weight: 700;
     color: var(--text);
     line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Clip long values */
 }
 
 .stat-label {
@@ -1505,7 +1500,6 @@ img {
 @media (max-width: 1024px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px; /* Slightly larger gap for medium screens */
     }
 }
 
@@ -1532,12 +1526,8 @@ img {
     }
 
     .stats-grid {
-        grid-template-columns: 1fr; /* Single column for tablets/phones */
+        grid-template-columns: 1fr 1fr;
         gap: 12px;
-    }
-
-    .stat-card {
-        padding: 16px; /* Tighter padding on mobile */
     }
 
     .client-grid {
@@ -1612,16 +1602,14 @@ img {
     .user-section {
         padding: 12px 12px;
     }
+    .recent-item-amount {
+    display: none;
+}
 }
 
 @media (max-width: 480px) {
     .stats-grid {
         grid-template-columns: 1fr;
-        gap: 8px; /* Even tighter for small phones */
-    }
-
-    .stat-card {
-        padding: 12px;
     }
 
     .service-select-grid {
@@ -1637,4 +1625,8 @@ img {
         height: 32px;
         font-size: 14px;
     }
+    .recent-item-amount {
+    display: none;
+}
+
 }
