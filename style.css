@@ -58,7 +58,12 @@ body {
     min-height: 100vh;
     display: flex;
     transition: background var(--transition), color var(--transition);
+    /* overflow-x: hidden; */
+}
+
+html, body {
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 a {
@@ -1624,3 +1629,4 @@ img {
         font-size: 14px;
     }
 }
+
