@@ -370,16 +370,14 @@ img {
     gap: 20px;
     margin-bottom: 28px;
 }
-.stat-label,
 .stat-value,
+.stat-label,
 .hero-overlay h2,
 .hero-overlay p {
-    white-space: nowrap; /* Or 'normal' if you want wrapping */
     overflow: hidden;
-    text-overflow: ellipsis; /* Adds ... if too long */
-    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Prevents unwanted wrapping */
 }
-
 .stat-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -390,6 +388,7 @@ img {
     gap: 16px;
     box-shadow: var(--shadow);
     transition: all var(--transition);
+    min-width: 0; /* Allows flex-shrink if needed */
 }
 
 .stat-card:hover {
@@ -1668,6 +1667,7 @@ img {
         font-size: 14px;
     }
 }
+
 
 
 
