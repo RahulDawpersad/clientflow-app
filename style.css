@@ -392,11 +392,6 @@ img {
     flex-shrink: 0;
 }
 
-.stat-icon svg {
-    width: 100%;
-    height: 100%;
-}
-
 .stat-clients .stat-icon {
     background: #EEF2FF;
     color: #4F46E5;
@@ -459,7 +454,6 @@ img {
     font-weight: 700;
     color: var(--text);
     line-height: 1.2;
-    word-break: break-all;
 }
 
 .stat-label {
@@ -889,9 +883,8 @@ img {
 /* ==================== RECENT LIST (Dashboard) ==================== */
 .recent-list {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 8px;
-    overflow-x: hidden;
 }
 
 .recent-item {
@@ -925,24 +918,17 @@ img {
     font-size: 11px;
     font-weight: 700;
     white-space: nowrap;
-    word-break: break-all;
-    /* Breaks long INV-YYYYMMDD-XXX at - */
 }
 
 .recent-item-name {
     font-size: 14px;
     font-weight: 500;
-    word-break: break-word;
-    /* Breaks long client names if no spaces */
-    hyphens: auto;
-    /* Optional: Better hyphenation for words */
 }
 
 .recent-item-amount {
     font-size: 14px;
     font-weight: 700;
     white-space: nowrap;
-    word-break: break-all;
 }
 
 /* ==================== EMPTY STATES ==================== */
@@ -1616,21 +1602,12 @@ img {
     .user-section {
         padding: 12px 12px;
     }
-
-    .stat-value {
-        font-size: 20px;
-    }
 }
 
 @media (max-width: 480px) {
     .stats-grid {
         grid-template-columns: 1fr;
     }
-
-    .stat-value {
-        font-size: 18px;
-    }
-
 
     .service-select-grid {
         grid-template-columns: 1fr;
