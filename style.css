@@ -375,6 +375,7 @@ img {
     gap: 16px;
     box-shadow: var(--shadow);
     transition: all var(--transition);
+    overflow: hidden; /* Prevent overflow */
 }
 
 .stat-card:hover {
@@ -447,6 +448,7 @@ img {
 .stat-info {
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Prevent overflow in info */
 }
 
 .stat-value {
@@ -454,6 +456,9 @@ img {
     font-weight: 700;
     color: var(--text);
     line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Clip long values */
 }
 
 .stat-label {
@@ -884,8 +889,9 @@ img {
 .recent-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
 }
+
 .recent-item {
     display: flex;
     align-items: center;
@@ -1499,6 +1505,7 @@ img {
 @media (max-width: 1024px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 16px; /* Slightly larger gap for medium screens */
     }
 }
 
@@ -1525,8 +1532,12 @@ img {
     }
 
     .stats-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr; /* Single column for tablets/phones */
         gap: 12px;
+    }
+
+    .stat-card {
+        padding: 16px; /* Tighter padding on mobile */
     }
 
     .client-grid {
@@ -1553,33 +1564,10 @@ img {
         font-size: 20px;
     }
 
-   .invoice-card {
-    background: #ffffff;
-    padding: 18px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.3s ease;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 600px) {
     .invoice-card {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
     }
-
-    .invoice-right {
-        text-align: left;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
 
     .invoice-info {
         width: 100%;
@@ -1629,6 +1617,11 @@ img {
 @media (max-width: 480px) {
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: 8px; /* Even tighter for small phones */
+    }
+
+    .stat-card {
+        padding: 12px;
     }
 
     .service-select-grid {
