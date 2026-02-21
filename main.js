@@ -336,7 +336,7 @@ const App = (() => {
                         <span class="recent-item-name">${client ? client.name : 'Unknown Client'}</span>
                     </div>
                     <span class="invoice-status status-${inv.status}">${capitalize(inv.status)}</span>
-                    <span class="recent-item-amount">${formatCurrency(inv.grand_total)}</span>
+                    
                 </div>`;
         }).join('');
     }
