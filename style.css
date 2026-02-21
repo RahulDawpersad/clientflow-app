@@ -46,11 +46,10 @@
     padding: 0;
 }
 
-
-
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg);
@@ -59,18 +58,7 @@ body {
     min-height: 100vh;
     display: flex;
     transition: background var(--transition), color var(--transition);
-    /* overflow-x: hidden; */
 }
-
-html, body {
-    overflow-x: hidden; /* Fallback to clip horizontal overflow */
-    max-width: 100vw;
-}
-
-/* html, body {
-    overflow-x: hidden;
-    max-width: 100%;
-} */
 
 a {
     color: var(--primary);
@@ -281,8 +269,7 @@ img {
 
 /* ==================== MAIN CONTENT ==================== */
 .main-content {
-      margin-left: 0 !important; /* Override any lingering sidebar margin */
-    margin-right: 0 !important;
+    margin-left: var(--sidebar-width);
     flex: 1;
     padding: 32px;
     min-height: 100vh;
@@ -355,9 +342,7 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 32px 40px;
-    text-align: center;
     color: #FFFFFF;
 }
 
@@ -372,30 +357,14 @@ img {
     opacity: 0.9;
 }
 
-.hero-overlay h2,
-.hero-overlay p {
-    text-align: center;
-    max-width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /* ==================== STATS GRID ==================== */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dynamic: 4 wide, 2 medium, 1 small */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-bottom: 28px;
-    justify-items: center; /* Centers cards in grid */
 }
-.stat-value,
-.stat-label,
-.hero-overlay h2,
-.hero-overlay p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap; /* Prevents unwanted wrapping */
-}
+
 .stat-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -403,14 +372,9 @@ img {
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centers icon + info flex */
-    text-align: center; /* Centers text inside */
     gap: 16px;
     box-shadow: var(--shadow);
-    transition: all var
-    overflow: hidden;
-    width: 100%;
-    max-width: 90%; /* Prevents full-stretch on mobile; centers with justify-items */
+    transition: all var(--transition);
 }
 
 .stat-card:hover {
@@ -496,13 +460,6 @@ img {
     font-size: 13px;
     color: var(--text-secondary);
     margin-top: 2px;
-}
-
-.stat-value,
-.stat-label {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Adds ... if value too long, e.g., big revenue */
 }
 
 /* ==================== SECTION CARD ==================== */
@@ -1541,31 +1498,8 @@ img {
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
- .sidebar {
-        transform: translateX(-100%);
-    }
-
-    .sidebar.open {
-        transform: translateX(0);
-    }
-
-    .mobile-header {
-        display: flex;
-    }
-
-    .sidebar-overlay.active {
-        display: block;
-    }
-
-    .main-content {
-        margin-left: 0;
-        padding: 72px 16px 24px;
-    }
-    /* .stats-grid {
+    .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-    } */
-    .main-content {
-        margin-left: 0;
     }
 }
 
@@ -1586,13 +1520,14 @@ img {
         display: block;
     }
 
-   .main-content {
-        padding-left: 16px !important; /* Force symmetry if overridden */
-        padding-right: 16px !important;
+    .main-content {
+        margin-left: 0;
+        padding: 72px 16px 24px;
     }
 
     .stats-grid {
-        grid-template-columns: 1fr; /* Explicit 1 column for narrow mobiles */
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
 
     .client-grid {
@@ -1617,12 +1552,6 @@ img {
 
     .hero-overlay h2 {
         font-size: 20px;
-    }
-
-    .hero-overlay h2,
-    .hero-overlay p {
-        max-width: 90%;
-        margin: 0 auto; /* Centers and constrains */
     }
 
     .invoice-card {
@@ -1694,13 +1623,3 @@ img {
         font-size: 14px;
     }
 }
-
-
-
-
-
-
-
-
-
-
