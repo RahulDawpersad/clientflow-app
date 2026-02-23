@@ -103,6 +103,7 @@ const App = (() => {
         updateUserUI();
         showToast('Logged out');
         showLoginModal();
+        switchView('dashboard');  // Reset to dashboard and clear data
     }
 
     // ==================== STORAGE HELPERS ====================
