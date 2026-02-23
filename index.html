@@ -321,51 +321,49 @@
     </main>
 
     <!-- ==================== CLIENT MODAL ==================== -->
-    <div class="modal-overlay" id="clientModal">
-        <div class="modal">
-            <div class="modal-header">
-                <h2 id="clientModalTitle">Add New Client</h2>
-                <button class="modal-close" onclick="App.closeClientModal()">×</button>
-            </div>
-            <form id="clientForm" class="modal-body">
-                <input type="hidden" id="clientId">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="clientName">Full Name *</label>
-                        <input type="text" id="clientName" required placeholder="e.g. John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="clientEmail">Email *</label>
-                        <input type="email" id="clientEmail" required placeholder="e.g. john@example.com">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="clientPhone">Phone</label>
-                        <input type="tel" id="clientPhone" placeholder="e.g. +27 12 345 6789">
-                    </div>
-                    <div class="form-group">
-                        <label for="clientCompany">Company</label>
-                        <input type="text" id="clientCompany" placeholder="e.g. Acme Corp">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="clientAddress">Address</label>
-                    <textarea id="clientAddress" rows="2"
-                        placeholder="e.g. 123 Main St, Durban, KwaZulu-Natal"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="clientNotes">Notes</label>
-                    <textarea id="clientNotes" rows="2"
-                        placeholder="Any additional notes about this client..."></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="App.closeClientModal()">Cancel</button>
-                    <button type="submit" class="btn btn-primary" id="clientSubmitBtn">Save Client</button>
-                </div>
-            </form>
+<div class="modal-overlay" id="clientModal">
+    <div class="modal">
+        <div class="modal-header">
+            <h2 id="clientModalTitle">Add New Client</h2>
+            <button class="modal-close" onclick="App.closeClientModal()">×</button>
         </div>
+        <form id="clientForm" class="modal-body">
+            <input type="hidden" id="clientId">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="clientName">Full Name *</label>
+                    <input type="text" id="clientName" required placeholder="e.g. John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">Email *</label>
+                    <input type="text" id="clientEmail" required placeholder="e.g. john@example.com or N/A if unknown">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="clientPhone">Phone</label>
+                    <input type="tel" id="clientPhone" placeholder="e.g. +27 12 345 6789 or N/A">
+                </div>
+                <div class="form-group">
+                    <label for="clientCompany">Company</label>
+                    <input type="text" id="clientCompany" placeholder="e.g. Acme Corp or N/A">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="clientAddress">Address</label>
+                <textarea id="clientAddress" rows="2" placeholder="e.g. 123 Main St, Durban, KwaZulu-Natal or N/A"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="clientNotes">Notes</label>
+                <textarea id="clientNotes" rows="2" placeholder="Any additional notes about this client... (e.g., email/phone pending)"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="App.closeClientModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary" id="clientSubmitBtn">Save Client</button>
+            </div>
+        </form>
     </div>
+</div>
 
     <!-- ==================== INVOICE MODAL ==================== -->
     <div class="modal-overlay" id="invoiceModal">
@@ -599,3 +597,4 @@
 </body>
 
 </html>
+
